@@ -93,6 +93,13 @@ const TIMELINE = [
     desc: "最美丽的，从来不是美食，而是你乖乖拌面条的样子。",
     photos: ["12-cailinji.jpg", "12-cailinji-2.jpg", "12-cailinji-3.jpg", "12-cailinji-4.jpg"]
   },
+  {
+    id: "qixi",
+    date: "2026-08-19",
+    title: "七夕，有缘来相会",
+    desc: "男孩送给女孩的礼物，从来不只是礼物，而是藏在礼物里的那份心意。",
+    photos: ["13-qixi.jpg", "13-qixi-2.jpg", "13-qixi-3.jpg"]
+  },
 ];
 
 // 用于首页倒数天数的起点：默认取“确定关系”那天。
