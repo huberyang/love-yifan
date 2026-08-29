@@ -86,6 +86,13 @@ const TIMELINE = [
     desc: "女孩用她的方式表达最深切的爱意。",
     photos: ["11-deepest-love.jpg", "11-deepest-love-2.jpg"]
   },
+  {
+    id: "cailinji",
+    date: "2026-08-10",
+    title: "Dating at 蔡林记",
+    desc: "最美丽的，从来不是美食，而是你乖乖拌面条的样子。",
+    photos: ["12-cailinji.jpg", "12-cailinji-2.jpg", "12-cailinji-3.jpg", "12-cailinji-4.jpg"]
+  },
 ];
 
 // 用于首页倒数天数的起点：默认取“确定关系”那天。
