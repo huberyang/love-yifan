@@ -90,7 +90,7 @@ const TIMELINE = [
     id: "cailinji",
     date: "2026-08-10",
     title: "Dating at 蔡林记",
-    desc: "最美丽的，从来不是美食，而是你乖乖拌面条的样子。",
+    desc: "最美丽的，从来不是美食，而是乖乖拌面条的样子。",
     photos: ["12-cailinji.jpg", "12-cailinji-2.jpg", "12-cailinji-3.jpg", "12-cailinji-4.jpg"]
   },
   {
