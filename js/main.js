@@ -161,17 +161,106 @@
 
   function setupLightbox() {
     const lightbox = document.getElementById("lightbox");
+    const stage = document.getElementById("lightboxStage");
     const lightboxImg = document.getElementById("lightboxImg");
+    const prevThumb = document.getElementById("lightboxPrevThumb");
+    const nextThumb = document.getElementById("lightboxNextThumb");
+    const closeBtn = document.getElementById("lightboxClose");
+
+    let group = [];
+    let index = 0;
+
+    function render() {
+      lightboxImg.src = group[index];
+      const hasMultiple = group.length > 1;
+      if (hasMultiple) {
+        prevThumb.src = group[(index - 1 + group.length) % group.length];
+        nextThumb.src = group[(index + 1) % group.length];
+      }
+      prevThumb.hidden = !hasMultiple;
+      nextThumb.hidden = !hasMultiple;
+    }
+
+    function open(imgEl) {
+      const container = imgEl.closest(".timeline-photos") || imgEl.closest(".timeline-item");
+      const imgs = container
+        ? Array.from(container.querySelectorAll(".timeline-photo img[src]"))
+        : [];
+      group = imgs.length ? imgs.map((im) => im.src) : [imgEl.src];
+      index = Math.max(imgs.indexOf(imgEl), 0);
+      render();
+      lightbox.classList.add("is-open");
+    }
+
+    function close() {
+      lightbox.classList.remove("is-open");
+    }
+
+    function step(delta) {
+      if (group.length < 2) return;
+      index = (index + delta + group.length) % group.length;
+      render();
+    }
+
     document.addEventListener("click", (e) => {
       const img = e.target.closest(".timeline-photo img, .profile-photo img");
       if (img && img.getAttribute("src")) {
-        lightboxImg.src = img.src;
-        lightbox.classList.add("is-open");
-      } else if (e.target === lightbox) {
-        lightbox.classList.remove("is-open");
+        open(img);
       }
     });
-    lightbox.addEventListener("click", () => lightbox.classList.remove("is-open"));
+
+    closeBtn.addEventListener("click", close);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target === stage) close();
+    });
+    prevThumb.addEventListener("click", () => step(-1));
+    nextThumb.addEventListener("click", () => step(1));
+
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("is-open")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
+    });
+
+    // 放大态下左右拖动/滑动切换上一张、下一张；轻点（无滑动）则关闭。
+    let dragging = false;
+    let moved = false;
+    let startX = 0;
+
+    lightboxImg.addEventListener("dragstart", (e) => e.preventDefault());
+
+    lightboxImg.addEventListener("pointerdown", (e) => {
+      dragging = true;
+      moved = false;
+      startX = e.clientX;
+      lightboxImg.setPointerCapture(e.pointerId);
+    });
+
+    lightboxImg.addEventListener("pointermove", (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 6) moved = true;
+      lightboxImg.style.transform = `translateX(${dx * 0.4}px)`;
+    });
+
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false;
+      const dx = e.clientX - startX;
+      lightboxImg.style.transform = "";
+      if (Math.abs(dx) > 50) {
+        step(dx > 0 ? -1 : 1);
+      } else if (!moved) {
+        close();
+      }
+    }
+
+    lightboxImg.addEventListener("pointerup", endDrag);
+    lightboxImg.addEventListener("pointercancel", () => {
+      dragging = false;
+      lightboxImg.style.transform = "";
+    });
   }
 
   function setupStarfield() {

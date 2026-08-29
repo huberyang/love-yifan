@@ -75,7 +75,12 @@
   </main>
 
   <div class="lightbox" id="lightbox">
-    <img id="lightboxImg" src="" alt="">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="关闭">&times;</button>
+    <div class="lightbox-stage" id="lightboxStage">
+      <img class="lightbox-thumb lightbox-thumb--prev" id="lightboxPrevThumb" alt="上一张" hidden>
+      <img id="lightboxImg" src="" alt="">
+      <img class="lightbox-thumb lightbox-thumb--next" id="lightboxNextThumb" alt="下一张" hidden>
+    </div>
   </div>
 
   <script src="js/data.js"></script>
