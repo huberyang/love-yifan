@@ -165,6 +165,7 @@
     const lightboxImg = document.getElementById("lightboxImg");
     const prevThumb = document.getElementById("lightboxPrevThumb");
     const nextThumb = document.getElementById("lightboxNextThumb");
+    const hint = document.getElementById("lightboxHint");
     const closeBtn = document.getElementById("lightboxClose");
 
     let group = [];
@@ -179,6 +180,7 @@
       }
       prevThumb.hidden = !hasMultiple;
       nextThumb.hidden = !hasMultiple;
+      hint.hidden = !hasMultiple;
     }
 
     function open(imgEl) {
