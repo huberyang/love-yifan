@@ -100,6 +100,34 @@ const TIMELINE = [
     desc: "男孩送给女孩的礼物，从来不只是礼物，而是藏在礼物里的那份心意。",
     photos: ["13-qixi.jpg", "13-qixi-2.jpg", "13-qixi-3.jpg"]
   },
+  {
+    id: "sg-zoo",
+    date: "2026-08-22",
+    title: "A Day at Singapore Zoo & River Wonders",
+    desc: "和你一起，看动物、吹晚风，在新加坡动物园与河川生态园度过悠闲的一天。",
+    photos: [
+      "14-sg-zoo.jpg",
+      "14-sg-zoo-2.jpg",
+      "14-sg-zoo-3.jpg",
+      "14-sg-zoo-4.jpg",
+      "14-sg-zoo-5.jpg",
+      "14-sg-zoo-6.jpg",
+      "14-sg-zoo-7.jpg",
+      "14-sg-zoo-8.jpg",
+      "14-sg-zoo-9.jpg",
+      "14-sg-zoo-10.jpg",
+      "14-sg-zoo-11.jpg",
+      "14-sg-zoo-12.jpg",
+      "14-sg-zoo-13.jpg",
+      "14-sg-zoo-14.jpg",
+      "14-sg-zoo-15.jpg",
+      "14-sg-zoo-16.jpg",
+      "14-sg-zoo-17.jpg",
+      "14-sg-zoo-18.jpg",
+      "14-sg-zoo-19.jpg",
+      "14-sg-zoo-20.jpg"
+    ]
+  },
 ];
 
 // 用于首页倒数天数的起点：默认取“确定关系”那天。
