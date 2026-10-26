@@ -128,6 +128,26 @@ const TIMELINE = [
       "14-sg-zoo-20.jpg"
     ]
   },
+  {
+    id: "beautiful-baby",
+    date: "2026-09-26",
+    title: "和我的美丽大宝贝",
+    desc: "九月长长久久，月上柳梢头，人约黄昏后，共婵娟，灯火可亲，岁月正好",
+    photos: [
+      "15-beautiful-baby.jpg",
+      "15-beautiful-baby-2.jpg",
+      "15-beautiful-baby-3.jpg",
+      "15-beautiful-baby-4.jpg",
+      "15-beautiful-baby-5.jpg",
+      "15-beautiful-baby-6.jpg",
+      "15-beautiful-baby-7.jpg",
+      "15-beautiful-baby-8.jpg",
+      "15-beautiful-baby-9.jpg",
+      "15-beautiful-baby-10.jpg",
+      "15-beautiful-baby-11.jpg",
+      "15-beautiful-baby-12.jpg"
+    ]
+  },
 ];
 
 // 用于首页倒数天数的起点：默认取“确定关系”那天。
