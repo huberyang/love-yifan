@@ -148,6 +148,30 @@ const TIMELINE = [
       "15-beautiful-baby-12.jpg"
     ]
   },
+  {
+    id: "chizhou",
+    date: "2026-10-10",
+    title: "金秋十月下池州",
+    desc: "first trip to 池州, but not the last time。一池山水，千载诗城",
+    photos: [
+      "16-chizhou.jpg",
+      "16-chizhou-2.jpg",
+      "16-chizhou-3.jpg",
+      "16-chizhou-4.jpg",
+      "16-chizhou-5.jpg",
+      "16-chizhou-6.jpg",
+      "16-chizhou-7.jpg",
+      "16-chizhou-8.jpg",
+      "16-chizhou-9.jpg",
+      "16-chizhou-10.jpg",
+      "16-chizhou-11.jpg",
+      "16-chizhou-12.jpg",
+      "16-chizhou-13.jpg",
+      "16-chizhou-14.jpg",
+      "16-chizhou-15.jpg",
+      "16-chizhou-16.jpg"
+    ]
+  },
 ];
 
 // 用于首页倒数天数的起点：默认取“确定关系”那天。
